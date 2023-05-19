@@ -68,4 +68,4 @@ run_test "${test_case2[0]}" "${test_case2[1]}"
 run_test "${test_case3[0]}" "${test_case3[1]}"
 run_test "${test_case4[0]}" "${test_case4[1]}"
 run_test "${test_case5[0]}" "${test_case5[1]}"
-run_test "${test_case6[0]}" "${test_case6[1]}"¬
+run_test "${test_case6[0]}" "${test_case6[1]}"
