@@ -7,7 +7,7 @@ This repository contains test scripts for the CPP09 module, which consists of th
 To test Exercise 00, make sure you have the following files in the same directory as the `btc` executable:
 
 - `tester.sh`: Test script for Exercise 00.
-- `data/data.csv`: Input data file required for testing.
+- `data.csv`: Input data file required for testing.
 
 To run the test script for Exercise 00, execute the following command in the terminal:
 
