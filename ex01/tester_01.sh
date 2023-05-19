@@ -42,6 +42,9 @@ run_test "2 3 + 4 *" "20"
 run_test "2 3 4 * +" "14"
 run_test "2 3 + 4 * 5 -" "15"
 run_test "9 5 3 + 2 4 * + -" "-7"
+run_test "1 2 * 2 / 2 + 5 * 6 - 1 3 * - 4 5 * * 8 /" "15"
+run_test "9 8 * 4 * 4 / 2 + 9 - 8 - 8 - 1 - 6 -" "42"
+run_test "8 9 * 9 - 9 - 9 - 4 - 1 +" "42"
 
 # Operations with negative results
 run_test "2 3 -" "-1"
@@ -52,20 +55,21 @@ run_test "99999999 1 *" "99999999"
 
 # Invalid operations
 for i in {0..9}; do
-    run_test "$i +" "Error: Invalid Input"
-    run_test "$i -" "Error: Invalid Input"
-    run_test "$i *" "Error: Invalid Input"
-    run_test "$i /" "Error: Invalid Input"
+    run_test "$i +" "Error"
+    run_test "$i -" "Error"
+    run_test "$i *" "Error"
+    run_test "$i /" "Error"
 done
 
 # Operations with too many numbers
-run_test "2 2 2 +" "Error: Invalid Input"
-run_test "2 +" "Error: Invalid Input"
-run_test "2 2" "Error: Invalid Input"
-run_test "2 + -" "Error: Invalid Input"
-run_test "1 2 + -" "Error: Invalid Input"
-run_test "+ -" "Error: Invalid Input"
-run_test "+ 2" "Error: Invalid Input"
+run_test "2 2 2 +" "Error"
+run_test "2 +" "Error"
+run_test "2 2" "Error"
+run_test "2 + -" "Error"
+run_test "1 2 + -" "Error"
+run_test "+ -" "Error"
+run_test "+ 2" "Error"
 
 # Operations with invalid characters
-run_test "2 a +" "Error: Invalid Input"
+run_test "2 a +" "Error"
+run_test "(1 + 1)" "Error"

@@ -60,6 +60,13 @@ input_file14=$(mktemp)
 input_file15=$(mktemp)
 input_file16=$(mktemp)
 input_file17=$(mktemp)
+input_file18=$(mktemp)
+input_file19=$(mktemp)
+input_file20=$(mktemp)
+input_file21=$(mktemp)
+input_file22=$(mktemp)
+input_file23=$(mktemp)
+input_file24=$(mktemp)
 
 # Generate input content for each file
 echo -e "date | value\n2011-01-03 | 3" > "$input_file1"
@@ -79,6 +86,14 @@ echo -e "date | value\n2012-12-12 | 5" > "$input_file14"
 echo -e "date | value\n2011-01-03 | 1.2" > "$input_file15"
 echo -e "date | value\n2012-01-11 | 1" > "$input_file16"
 echo -e "date | value\n2001-42-42" > "$input_file17"
+echo -e "" > "$input_file18"
+echo -e "date | value\n2009-01-01 | 2" > "$input_file19"
+echo -e "date | value\n2023-01-01 | 1" > "$input_file20"
+echo -e "date | value\n2023-001-01 | 1" > "$input_file20"
+echo -e "date | value\n2023-01-001 | 1" > "$input_file21"
+echo -e "date | value\n023-01-0001 | 1" > "$input_file22"
+echo -e "date | value\n123-01-0001 | 1" > "$input_file23"
+echo -e "date | value\n2009-1-002 | 2" > "$input_file24"
 
 # Define expected outputs
 expected_output1="2011-01-03 => 3 = 0.9"
@@ -98,6 +113,13 @@ expected_output14="2012-12-12 => 5 = 69"
 expected_output15="2011-01-03 => 1.2 = 0.36"
 expected_output16="2012-01-11 => 1 = 7.1"
 expected_output17="Error: bad input => "
+expected_output18="Error: bad input => "
+expected_output19="Error: bad input => 2009-01-01"
+expected_output20="Error: bad input => "
+expected_output21="Error: bad input => 2023-01-001"
+expected_output22="Error: bad input => 23-01-0001"
+expected_output23="Error: bad input => 2023-01-01"
+expected_output24="Error: bad input => 2009-1-002"
 
 # Run the test cases
 run_test "$input_file1" "$expected_output1"
@@ -117,6 +139,13 @@ run_test "$input_file14" "$expected_output14"
 run_test "$input_file15" "$expected_output15"
 run_test "$input_file16" "$expected_output16"
 run_test "$input_file17" "$expected_output17"
+run_test "$input_file18" "$expected_output18"
+run_test "$input_file19" "$expected_output19"
+run_test "$input_file20" "$expected_output20"
+run_test "$input_file21" "$expected_output21"
+run_test "$input_file22" "$expected_output22"
+run_test "$input_file23" "$expected_output23"
+run_test "$input_file24" "$expected_output24"
 
 # Clean up dynamic input files
-rm "$input_file1" "$input_file2" "$input_file3" "$input_file4" "$input_file5" "$input_file6" "$input_file7" "$input_file8" "$input_file9" "$input_file10" "$input_file11"  "$input_file12" "$input_file13"  "$input_file14" "$input_file15" "$input_file16" "$input_file17"
+rm "$input_file1" "$input_file2" "$input_file3" "$input_file4" "$input_file5" "$input_file6" "$input_file7" "$input_file8" "$input_file9" "$input_file10" "$input_file11"  "$input_file12" "$input_file13"  "$input_file14" "$input_file15" "$input_file16" "$input_file17" "$input_file18" "$input_file19" "$input_file20" "$input_file21" "$input_file22" "$input_file23" "$input_file24"
