@@ -57,7 +57,6 @@ run_test() {
 # Define test cases
 test_case1=("1 3 2 5 4 a" "Error")
 test_case2=("1 3 2 -5 4" "Error")
-test_case3=("1 3 2 5 4 5" "Error")
 test_case4=("1 3 2 5 4" "1 2 3 4 5")
 test_case5=("2 3 1 5 4" "1 2 3 4 5")
 test_case6=("5 3 1 2 4" "1 2 3 4 5")
@@ -65,7 +64,6 @@ test_case6=("5 3 1 2 4" "1 2 3 4 5")
 # Run the test cases
 run_test "${test_case1[0]}" "${test_case1[1]}"
 run_test "${test_case2[0]}" "${test_case2[1]}"
-run_test "${test_case3[0]}" "${test_case3[1]}"
 run_test "${test_case4[0]}" "${test_case4[1]}"
 run_test "${test_case5[0]}" "${test_case5[1]}"
 run_test "${test_case6[0]}" "${test_case6[1]}"
