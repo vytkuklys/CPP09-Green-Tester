@@ -24,7 +24,7 @@ run_test() {
         else
             echo -e "${LIGHTRED}Test failed: ${RED}\n'$input_line'\n"
             echo "Expected:"
-            echo -e "$expected_output"
+            echo -e "$expected_output (or any message with the word 'Error')"
             echo "Got:"
             echo -e "$actual_output${NC}\n"
         fi
